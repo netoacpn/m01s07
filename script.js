@@ -133,7 +133,7 @@ function addCardDeck(){
 
     divCardBody.getElementsByClassName(".card-body"+impCard)
     var h4Titulo = document.createElement('h4')
-    h4Titulo.classList.add("card-title")
+    h4Titulo.classList.add("card-title", "titulo"+impCard)
     h4Titulo.innerText = "Nome do remédio "+impCard
     divCardBody.appendChild(h4Titulo)
 
@@ -148,7 +148,7 @@ function addCardDeck(){
     divCardBody.appendChild(h5Preco)
 
     var botaoCompra = document.createElement('button')
-    botaoCompra.classList.add("btn", "btn-primary", "btn-card")
+    botaoCompra.classList.add("btn", "btn-primary", "btn-card", "btn"+impCard)
     botaoCompra.type = "submit"
     botaoCompra.innerText = "Adicionar ao Carrinho "
     divCardBody.appendChild(botaoCompra)
@@ -169,9 +169,15 @@ addCardDeck()
 addCardDeck()
 
 
-
 // Ex3 - [pagina-todos-medicamentos] Adicionar evento para adicionar medicamento
 // Capture o evento de clique no botão de adicionar um medicamento e, ao ser clicado, exiba um log com o nome do medicamento adicionado e a lista de medicamentos no JavaScript. Além disso, mostre um alerta informando que o medicamento foi adicionado ao carrinho.
+
+// var btnAddCart = querySelector(".btn"+impCard)
+// var medicamentoComprado = querySelector(".titulo"+impCard)
+// btnAddCart.addEventListener("click", function(){
+//     console.log(medicamentoComprado)
+//     window.alert("Você acabou de adicionar ao carrinho o " + medicamentoComprado)
+// })
 
 // Ex4 - [pagina-todos-medicamentos] Adicionar evento para favoritar medicamento
 // Capture o evento de clique no botão de favoritar um produto e, ao ser clicado, exiba um log com o nome do medicamento adicionado e a lista de medicamentos favoritados no JavaScript. Além disso, mostre um alerta informando que o medicamento foi adicionado aos favoritos.
