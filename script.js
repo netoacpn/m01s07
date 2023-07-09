@@ -94,6 +94,82 @@ addInfoNav()
 // Na página de todos os medicamentos, crie uma lista de medicamentos utilizando JavaScript para criar elementos do DOM dinamicamente. Os medicamentos devem ser exibidos em cards, contendo título, imagem, valor e um botão de adicionar ao carrinho.
 // Sugestão: Crie uma lista de objetos  em Javascript com informações de cada card
 
+var main = document.querySelector('main')
+
+function addSection(){
+    var section = document.createElement("section")
+    section.setAttribute("style", "margin-top: 50px;")
+    main.appendChild(section)
+}
+addSection()
+
+var sectionMain = document.querySelector('section')
+function addSectionDiv(){
+    var divSection = document.createElement("div")
+    divSection.classList.add("card-deck")
+    divSection.setAttribute("style", "margin: 35px; display: grid; grid-template-columns: repeat(4 ,1fr);")
+    sectionMain.appendChild(divSection)
+}
+addSectionDiv()
+
+var divSection = document.querySelector('.card-deck')
+var impCard = 1
+function addCardDeck(){
+    var divCard = document.createElement("div")
+    divCard.classList.add("card", "card"+impCard)
+    divCard.setAttribute("style", "margin: 15px")
+    divSection.appendChild(divCard)
+
+    divCard.getElementsByClassName(".card"+impCard)
+    var cardImg = document.createElement("img")
+    cardImg.src = "img/med-gen"+impCard+".jpg"
+    cardImg.classList.add("card-img-top")
+    cardImg.setAttribute("alt", "Foto caixa do remédio")    
+    divCard.appendChild(cardImg)
+
+    var divCardBody = document.createElement('div')
+    divCardBody.classList.add("card-body", "card-body"+impCard)
+    divCard.appendChild(divCardBody)
+
+    divCardBody.getElementsByClassName(".card-body"+impCard)
+    var h4Titulo = document.createElement('h4')
+    h4Titulo.classList.add("card-title")
+    h4Titulo.innerText = "Nome do remédio "+impCard
+    divCardBody.appendChild(h4Titulo)
+
+    var descricaoRemedio = document.createElement('p')
+    descricaoRemedio.classList.add("card-text")
+    descricaoRemedio.innerText = "Este é um remédio genérico focado na resolução dos seus problemas de saúde."
+    divCardBody.appendChild(descricaoRemedio)
+
+    var h5Preco = document.createElement('h5')
+    h5Preco.classList.add("card-price")
+    h5Preco.innerText = "R$ 99,99"
+    divCardBody.appendChild(h5Preco)
+
+    var botaoCompra = document.createElement('button')
+    botaoCompra.classList.add("btn", "btn-primary", "btn-card")
+    botaoCompra.type = "submit"
+    botaoCompra.innerText = "Adicionar ao Carrinho "
+    divCardBody.appendChild(botaoCompra)
+
+    var cardIcon = document.createElement("i")
+    cardIcon.classList.add("bi", "bi-cart-plus")
+    botaoCompra.appendChild(cardIcon)
+
+    impCard++
+}
+addCardDeck()
+addCardDeck()
+addCardDeck()
+addCardDeck()
+addCardDeck()
+addCardDeck()
+addCardDeck()
+addCardDeck()
+
+
+
 // Ex3 - [pagina-todos-medicamentos] Adicionar evento para adicionar medicamento
 // Capture o evento de clique no botão de adicionar um medicamento e, ao ser clicado, exiba um log com o nome do medicamento adicionado e a lista de medicamentos no JavaScript. Além disso, mostre um alerta informando que o medicamento foi adicionado ao carrinho.
 
