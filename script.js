@@ -211,29 +211,28 @@ adicionarAoCarrinho()
 // Ex4 - [pagina-todos-medicamentos] Adicionar evento para favoritar medicamento
 // Capture o evento de clique no botão de favoritar um produto e, ao ser clicado, exiba um log com o nome do medicamento adicionado e a lista de medicamentos favoritados no JavaScript. Além disso, mostre um alerta informando que o medicamento foi adicionado aos favoritos.
 
-// function adicionarFavoritos() {
-//     var btnAddFav = document.getElementsByClassName("favoriteButton")
+function adicionarFavoritos() {
+    var btnAddFav = document.getElementsByClassName("favoriteButton")
   
-//     var btnAddFavArray = Array.from(btnAddFav)
+    var btnAddFavArray = Array.from(btnAddFav)
 
-//     var listaFavArray = []
+    var listaFavArray = []
   
-//     btnAddFavArray.forEach(function(botaoFav, index) {
-//       botaoFav.addEventListener('click', function() {
-//         var nomeRemedio = document.querySelector('.titulo' + (index + 1)).innerText      
+    btnAddFavArray.forEach(function(botaoFav, index) {
+      botaoFav.addEventListener('click', function() {
+        var nomeRemedio = document.querySelector('.titulo' + (index + 1)).innerText      
   
-//         console.log("Medicamento adicionado aos favoritos:", nomeRemedio)
+        console.log("Medicamento adicionado aos favoritos:", nomeRemedio)
 
-//         listaCarrinhoArray.push(nomeRemedio)
-//         console.log(listaFavArray)  
+        listaFavArray.push(nomeRemedio)
+        console.log(listaFavArray)  
         
-//         window.alert(nomeRemedio + " adicionado aos favoritos!")
-//       })
-//     })
-// }
-
+        window.alert(nomeRemedio + " adicionado aos favoritos!")
+      })
+    })
+}
   
-// adicionarAoCarrinho()
+adicionarFavoritos()
 
 // Ex5 - [pagina-contato] Adicionar Assuntos no Formulário de Contato
 // Na página de contato, adicione um dropdown de assuntos dinamicamente utilizando JavaScript. Os assuntos devem ser adicionados como opções no dropdown.
