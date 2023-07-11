@@ -121,6 +121,19 @@ function addCardDeck(){
     divSection.appendChild(divCard)
 
     divCard.getElementsByClassName(".card"+impCard)
+    
+    // <button class="btn" type="submit" style="text-align: right "><i class="bi bi-bookmark-heart-fill" style="font-size: 3rem; color: #007bff;"></i></button>
+    var favoriteButton = document.createElement("button")
+    favoriteButton.classList.add("btn", "favoriteButton"+impCard)
+    favoriteButton.type = "submit"
+    favoriteButton.setAttribute("style", "text-align: right")   
+    divCard.appendChild(favoriteButton)
+
+    var favoriteIcon = document.createElement("i")
+    favoriteIcon.classList.add("bi", "bi-bookmark-heart-fill")
+    favoriteIcon.setAttribute("style", "font-size: 3rem; color: #007bff")
+    favoriteButton.appendChild(favoriteIcon)
+
     var cardImg = document.createElement("img")
     cardImg.src = "img/med-gen"+impCard+".jpg"
     cardImg.classList.add("card-img-top")
@@ -172,12 +185,29 @@ addCardDeck()
 // Ex3 - [pagina-todos-medicamentos] Adicionar evento para adicionar medicamento
 // Capture o evento de clique no botão de adicionar um medicamento e, ao ser clicado, exiba um log com o nome do medicamento adicionado e a lista de medicamentos no JavaScript. Além disso, mostre um alerta informando que o medicamento foi adicionado ao carrinho.
 
-// var btnAddCart = querySelector(".btn"+impCard)
-// var medicamentoComprado = querySelector(".titulo"+impCard)
-// btnAddCart.addEventListener("click", function(){
-//     console.log(medicamentoComprado)
-//     window.alert("Você acabou de adicionar ao carrinho o " + medicamentoComprado)
-// })
+function adicionarAoCarrinho() {
+    var botoesAdicionar = document.getElementsByClassName("btn-card")
+  
+    var botoesArray = Array.from(botoesAdicionar)
+  
+    botoesArray.forEach(function(botao, index) {
+      botao.addEventListener('click', function() {
+        var nomeRemedio = document.querySelector('.titulo' + (index + 1)).innerText;
+        var listaMedicamentos = document.getElementsByClassName("card-title")
+  
+        var listaMedicamentosArray = Array.from(listaMedicamentos).map(function(elemento) {
+          return elemento.innerText;
+        });
+  
+        console.log("Medicamento adicionado:", nomeRemedio)
+        console.log("Lista de medicamentos:", listaMedicamentosArray)
+  
+        window.alert(nomeRemedio + " adicionado ao carrinho!")
+      })
+    })
+  }
+  
+  adicionarAoCarrinho()
 
 // Ex4 - [pagina-todos-medicamentos] Adicionar evento para favoritar medicamento
 // Capture o evento de clique no botão de favoritar um produto e, ao ser clicado, exiba um log com o nome do medicamento adicionado e a lista de medicamentos favoritados no JavaScript. Além disso, mostre um alerta informando que o medicamento foi adicionado aos favoritos.
