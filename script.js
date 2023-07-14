@@ -21,23 +21,7 @@ function addInfoNav(){
     navBrand.innerText = "DevFarma"
     navHeaderElement.appendChild(navBrand)
 
-    // var buttonNav = document.createElement('button')
-    // buttonNav.classList.add("navbar-toggler")
-    // buttonNav.type = "button"
-    // buttonNav.setAttribute("data-toggle", "colapse")
-    // buttonNav.setAttribute("data-target", "#navbarSupportedContent")
-    // buttonNav.setAttribute("aria-controls", "navbarSupportedContent")
-    // buttonNav.setAttribute("aria-expanded", "false")
-    // buttonNav.setAttribute("aria-label", "Toggle navigation")
-    // navHeaderElement.appendChild(buttonNav)
-
-    // var navSpan = document.createElement("span")
-    // navSpan.classList.add("navbar-toggler-icon")
-
-    // buttonNav.appendChild(navSpan)
-
-    var divNav = document.createElement("div")
-    // divNav.classList.add("collapse", "navbar-collapse")
+    var divNav = document.createElement("div")    
     divNav.setAttribute("id", "navbarSupportedContent")
     navHeaderElement.appendChild(divNav)
 
@@ -94,7 +78,7 @@ addInfoNav()
 // Na página de todos os medicamentos, crie uma lista de medicamentos utilizando JavaScript para criar elementos do DOM dinamicamente. Os medicamentos devem ser exibidos em cards, contendo título, imagem, valor e um botão de adicionar ao carrinho.
 // Sugestão: Crie uma lista de objetos  em Javascript com informações de cada card
 
-var main = document.querySelector('main')
+var main = document.getElementById('mainIndex')
 
 function addSection(){
     var section = document.createElement("section")
@@ -117,12 +101,11 @@ var impCard = 1
 function addCardDeck(){
     var divCard = document.createElement("div")
     divCard.classList.add("card", "card"+impCard)
-    divCard.setAttribute("style", "margin: 15px")
+    divCard.setAttribute("style", "margin: 15px; background-color: #f3f3f3; -webkit-box-shadow: -20px 20px 91px -21px rgba(0,0,0,0.75); -moz-box-shadow: -20px 20px 91px -21px rgba(0,0,0,0.75); box-shadow: -20px 20px 91px -21px rgba(0,0,0,0.75);")
     divSection.appendChild(divCard)
 
-    divCard.getElementsByClassName(".card"+impCard)
-    
-    // <button class="btn" type="submit" style="text-align: right "><i class="bi bi-bookmark-heart-fill" style="font-size: 3rem; color: #007bff;"></i></button>
+    divCard.getElementsByClassName(".card"+impCard)    
+
     var favoriteButton = document.createElement("button")
     favoriteButton.classList.add("btn", "favoriteButton")
     favoriteButton.type = "submit"
@@ -137,7 +120,8 @@ function addCardDeck(){
     var cardImg = document.createElement("img")
     cardImg.src = "img/med-gen"+impCard+".jpg"
     cardImg.classList.add("card-img-top")
-    cardImg.setAttribute("alt", "Foto caixa do remédio")    
+    cardImg.setAttribute("alt", "Foto caixa do remédio")
+    cardImg.setAttribute("style", "padding: 30px")     
     divCard.appendChild(cardImg)
 
     var divCardBody = document.createElement('div')
@@ -236,9 +220,12 @@ adicionarFavoritos()
 
 // Ex5 - [pagina-contato] Adicionar Assuntos no Formulário de Contato
 // Na página de contato, adicione um dropdown de assuntos dinamicamente utilizando JavaScript. Os assuntos devem ser adicionados como opções no dropdown.
+// Realizado em outro script
 
 // Ex6 - [pagina-contato] Adicionar Evento de envio de Formulário de Contato
 // Capture o evento de envio do formulário de contato e, ao ser enviado, exiba um log com o nome da pessoa que enviou a mensagem utilizando JavaScript. Além disso, mostre um alerta informando que a mensagem foi enviada com sucesso.
+
+
 
 // Ex7 - [Header] Adicionar Dark Mode
 // Crie um botão no cabeçalho da página e adicione um evento de clique utilizando JavaScript. Esse botão será responsável por ativar o modo escuro, modificando as propriedades e estilos do DOM para exibir uma versão escura do site.
