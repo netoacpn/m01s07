@@ -220,7 +220,7 @@ adicionarFavoritos()
 
 // Ex5 - [pagina-contato] Adicionar Assuntos no Formulário de Contato
 // Na página de contato, adicione um dropdown de assuntos dinamicamente utilizando JavaScript. Os assuntos devem ser adicionados como opções no dropdown.
-// Realizado em outro script
+
 
 // Ex6 - [pagina-contato] Adicionar Evento de envio de Formulário de Contato
 // Capture o evento de envio do formulário de contato e, ao ser enviado, exiba um log com o nome da pessoa que enviou a mensagem utilizando JavaScript. Além disso, mostre um alerta informando que a mensagem foi enviada com sucesso.
