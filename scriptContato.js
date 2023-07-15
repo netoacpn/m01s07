@@ -114,7 +114,7 @@ function addOptions(){
 }
 addOptions()
 
-var optionsArray = ["Elogio", "Reclamacao", "Orçamento", "Pagamento", "Troca", "Devolucao"]
+var optionsArray = ["Elogio", "Reclamação", "Orçamento", "Pagamento", "Troca", "Devolucao"]
 
 for (var i = 0; i < optionsArray.length; i++){
     var optionElement = document.createElement("option")
