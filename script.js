@@ -261,8 +261,8 @@ function verificarTema(){
 
   botaoCompra.forEach(i => {
     i.classList.toggle("btn-primary")
-    i.classList.toggle("btn-dark")}
-  )
+    i.classList.toggle("btn-dark")
+  })
 
   favoriteIcon.forEach(i => {
     i.classList.toggle("text-primary")

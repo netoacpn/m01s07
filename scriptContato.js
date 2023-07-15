@@ -70,6 +70,7 @@ function addInfoNav(){
     buttonDarkMode.classList.add("btn", "btn-outline-light", "my-2", "my-sm-0")
     buttonDarkMode.setAttribute("type", "submit")
     buttonDarkMode.setAttribute("style", "margin-left: auto")
+    buttonDarkMode.id = "darkMode"
     buttonDarkMode.innerText = "Modo Escuro"
     navHeaderElement.appendChild(buttonDarkMode)
 }
@@ -129,3 +130,23 @@ function mudancaSelect(evento) {
   }
   
 selectDropdown.addEventListener("change", mudancaSelect)
+
+// Dark Mode
+
+var buttonDarkMode = document.getElementById('darkMode')
+
+var bodyElement = document.getElementById('body')
+
+buttonDarkMode.addEventListener("click", verificarTema)
+
+function verificarTema(){
+
+  navHeaderElement.classList.toggle("bg-primary")  
+  navHeaderElement.classList.toggle("bg-dark")
+  
+  buttonDarkMode.classList.toggle("btn-primary")
+  buttonDarkMode.classList.toggle("btn-dark")
+  
+  bodyElement.classList.toggle("bg-light")
+  bodyElement.classList.toggle("bg-secondary")
+}
