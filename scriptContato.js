@@ -65,6 +65,13 @@ function addInfoNav(){
     var spanLiContato = document.createElement("span")
     spanLiContato.classList.add("sr-only")
     liContato.appendChild(spanLiContato)
+
+    var buttonDarkMode = document.createElement("button")
+    buttonDarkMode.classList.add("btn", "btn-outline-light", "my-2", "my-sm-0")
+    buttonDarkMode.setAttribute("type", "submit")
+    buttonDarkMode.setAttribute("style", "margin-left: auto")
+    buttonDarkMode.innerText = "Modo Escuro"
+    navHeaderElement.appendChild(buttonDarkMode)
 }
 addInfoNav()
 

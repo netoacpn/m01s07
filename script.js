@@ -70,6 +70,14 @@ function addInfoNav(){
     var spanLiContato = document.createElement("span")
     spanLiContato.classList.add("sr-only")
     liContato.appendChild(spanLiContato)
+
+    var buttonDarkMode = document.createElement("button")
+    buttonDarkMode.classList.add("btn", "btn-outline-light", "my-2", "my-sm-0")
+    buttonDarkMode.setAttribute("type", "submit")
+    buttonDarkMode.setAttribute("style", "margin-left: auto")
+    buttonDarkMode.id = "darkMode"
+    buttonDarkMode.innerText = "Modo Escuro"
+    navHeaderElement.appendChild(buttonDarkMode)
 }
 addInfoNav()
 
@@ -113,8 +121,9 @@ function addCardDeck(){
     divCard.appendChild(favoriteButton)
 
     var favoriteIcon = document.createElement("i")
-    favoriteIcon.classList.add("bi", "bi-bookmark-heart-fill")
-    favoriteIcon.setAttribute("style", "font-size: 3rem; color: #007bff")
+    favoriteIcon.classList.add("bi", "bi-bookmark-heart-fill", "text-primary")
+    favoriteIcon.setAttribute("style", "font-size: 3rem;")
+    favoriteIcon.id = "icon"
     favoriteButton.appendChild(favoriteIcon)
 
     var cardImg = document.createElement("img")
@@ -148,6 +157,8 @@ function addCardDeck(){
     botaoCompra.classList.add("btn", "btn-primary", "btn-card", "btn"+impCard)
     botaoCompra.type = "submit"
     botaoCompra.innerText = "Adicionar ao Carrinho "
+    botaoCompra.id = "botaoCompra"
+    botaoCompra.setAttribute("style", "display: flex; margin: auto; align-items: center;")
     divCardBody.appendChild(botaoCompra)
 
     var cardIcon = document.createElement("i")
@@ -229,3 +240,35 @@ adicionarFavoritos()
 
 // Ex7 - [Header] Adicionar Dark Mode
 // Crie um botão no cabeçalho da página e adicione um evento de clique utilizando JavaScript. Esse botão será responsável por ativar o modo escuro, modificando as propriedades e estilos do DOM para exibir uma versão escura do site.
+
+var buttonDarkMode = document.getElementById('darkMode')
+
+var botaoCompra = document.querySelectorAll("#botaoCompra")
+
+var bodyElement = document.getElementById('body')
+
+var favoriteIcon = document.querySelectorAll('#icon')
+
+buttonDarkMode.addEventListener("click", verificarTema)
+
+function verificarTema(){
+
+  navHeaderElement.classList.toggle("bg-primary")  
+  navHeaderElement.classList.toggle("bg-dark")
+  
+  buttonDarkMode.classList.toggle("btn-primary")
+  buttonDarkMode.classList.toggle("btn-dark")
+
+  botaoCompra.forEach(i => {
+    i.classList.toggle("btn-primary")
+    i.classList.toggle("btn-dark")}
+  )
+
+  favoriteIcon.forEach(i => {
+    i.classList.toggle("text-primary")
+    i.classList.toggle("text-dark")}
+  )
+  
+  bodyElement.classList.toggle("bg-light")
+  bodyElement.classList.toggle("bg-secondary")
+}
