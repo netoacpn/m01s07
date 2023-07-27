@@ -1,4 +1,4 @@
-const dadosUsuarios = `
+var dadosUsuarios = `
 [
     {
         "nome": "Admin",

@@ -82,6 +82,8 @@ var buttonDarkMode = document.getElementById('darkMode')
 
 var bodyElement = document.getElementById('body')
 
+var button = document.getElementById('submitBtn')
+
 buttonDarkMode.addEventListener("click", verificarTema)
 
 function verificarTema(){
@@ -94,4 +96,7 @@ function verificarTema(){
   
   bodyElement.classList.toggle("bg-light")
   bodyElement.classList.toggle("bg-secondary")
+
+  button.classList.toggle("btn-primary")
+  button.classList.toggle("btn-dark")
 }
